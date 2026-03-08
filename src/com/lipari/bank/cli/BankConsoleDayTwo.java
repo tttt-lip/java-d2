@@ -54,7 +54,7 @@ public class BankConsoleDayTwo {
         String searchKey = "rssmra85m01h501z";   // stesso CF, ma minuscolo
         System.out.println("  Chiave di ricerca  : " + searchKey + "  (NON normalizzata)");
 
-        Optional<Customer> found = customerRepo.findByFiscalCode(searchKey);
+        Optional<Customer> found = customerRepo.findByFiscalCode(searchKey.toUpperCase());
 
         if (found.isPresent()) {
             System.out.println("  Risultato          : TROVATO → " + found.get());
