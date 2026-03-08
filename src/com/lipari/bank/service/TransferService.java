@@ -48,6 +48,8 @@ public class TransferService {
         source = new CheckingAccount(source.getIban(), source.getBalance(),
                 source.getOwner(), BigDecimal.ZERO);
 
+        accountRepository.save(source);
+
         source.withdraw(amount);
         target.deposit(amount);
 
