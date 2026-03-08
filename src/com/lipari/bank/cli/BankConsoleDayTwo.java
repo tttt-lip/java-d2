@@ -133,7 +133,7 @@ public class BankConsoleDayTwo {
         System.out.println("  Lista prima della rimozione (" + customers.size() + " clienti):");
         customers.forEach(c -> System.out.println("    • " + c));
 
-        System.out.println("  Avvio rimozione clienti BUSINESS con for...");
+        System.out.println("  Avvio rimozione clienti BUSINESS con for  ...");
 
         try {
             removeBusinessCustomers(customers);
