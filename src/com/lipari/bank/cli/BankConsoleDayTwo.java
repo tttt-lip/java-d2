@@ -133,7 +133,7 @@ public class BankConsoleDayTwo {
         System.out.println("  Lista prima della rimozione (" + customers.size() + " clienti):");
         customers.forEach(c -> System.out.println("    • " + c));
 
-        System.out.println("  Avvio rimozione clienti BUSINESS con for-each ...");
+        System.out.println("  Avvio rimozione clienti BUSINESS con for...");
 
         try {
             removeBusinessCustomers(customers);
@@ -146,7 +146,9 @@ public class BankConsoleDayTwo {
     }
 
     private void removeBusinessCustomers(List<Customer> customers) {
-        for (Customer c : customers) {                    // iteratore fail-fast
+
+        for (int i = 0; i < customers.size(); i++) {
+            Customer c = customers.get(i);
             if (c.getCustomerType() == CustomerType.BUSINESS) {
                 customers.remove(c);
             }
