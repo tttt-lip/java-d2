@@ -45,11 +45,6 @@ public class TransferService {
         Account target = accountRepository.findByIban(targetIban)
                 .orElseThrow(() -> new AccountNotFoundException(targetIban));
 
-        source = new CheckingAccount(source.getIban(), source.getBalance(),
-                source.getOwner(), BigDecimal.ZERO);
-
-        accountRepository.save(source);
-
         source.withdraw(amount);
         target.deposit(amount);
 
