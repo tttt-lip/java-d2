@@ -146,13 +146,7 @@ public class BankConsoleDayTwo {
     }
 
     private void removeBusinessCustomers(List<Customer> customers) {
-
-        for (int i = 0; i < customers.size(); i++) {
-            Customer c = customers.get(i);
-            if (c.getCustomerType() == CustomerType.BUSINESS) {
-                customers.remove(c);
-            }
-        }
+        customers.removeIf(customer -> customer.getCustomerType() == CustomerType.BUSINESS);
     }
 
     // ─── Utility di stampa ───────────────────────────────────────────────────
